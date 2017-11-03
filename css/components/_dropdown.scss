@@ -1,0 +1,107 @@
+.dropdown {
+  $dd: &;
+  $color: #dadada;
+  $color-2: #0064FF;
+  $color-3: #69A6FF;
+  $darker: darken($color, 40%);
+  display: inline-block; 
+  width: 100%;
+  border: 1px solid $darker;
+  position: relative;
+  
+  &:focus {
+    outline: 0;
+    
+    #{$dd}__button {
+      outline: 1px dotted $darker;
+      outline-offset: 2px;
+    }
+  }
+  
+  &[aria-disabled],
+  &[aria-disabled=true] {
+    color: lightgray;
+    border-color: currentColor;
+    
+    #{$dd}__button {
+      background-color: lighten(lightgray, 20%);
+      cursor: default;
+    }
+  }
+  
+  &--open {
+    #{$dd}__arrow {
+      transform: rotate(180deg);
+    }
+    #{$dd}__options {
+      border-top-width: 1px;
+      height: auto;
+      display: block;
+      box-shadow: 2px 2px 14px rgba(black, 0.1);
+    }
+  }
+  
+  &__button {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0.4em 2em 0.4em 0.5em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  &__selection {
+    flex: 1 1 auto;
+  }
+  
+  &__arrow {
+    height: 100%;
+    width: .7em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1px;
+    transform-origin: center;
+    transition: transform 100ms;
+    position: absolute;
+    right: 0.2em;
+  }
+  
+  &__options {
+    list-style: none;
+    border: 1px solid $darker;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    background-color: white;
+    display: none;
+    z-index: 1;
+  }
+  
+  &__option {
+    padding: 0.3em 0.5em;
+    cursor: default;
+    outline: none;
+    
+    &:hover {
+      background-color: rgba(black, 0.1);
+    }
+    
+    &[aria-selected] {
+      background-color: $color-2;
+      color: white;
+      
+      &:hover {
+        background-color: $color-2;
+        color: white;
+      }
+    }
+  }
+}

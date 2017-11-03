@@ -1,0 +1,27 @@
+@import "components/dropdown";
+
+html {
+  font-family: 'IBM Plex Sans', helvetica, arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.dropdown-container {
+  width: 20em;
+  margin-right: 1em;
+}
+
+#change-notifier {
+  background-color: black;
+  padding: 0.4em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+}
+.demo {
+  display: flex;
+}

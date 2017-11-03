@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dropdown Component</title>
+  <link rel="stylesheet" href="css/style.processed.css">
+</head>
+
+<body>
+  <div class="demo">
+    <div class="dropdown-container">
+      <h3>Vanilla JS</h3>
+      <div data-dropdown class="dropdown" role="listbox" tabindex="0">
+        <div class="dropdown__button">
+          <span class="dropdown__selection">Apples</span>
+          <svg class="dropdown__arrow" viewBox="0 0 5 5">
+              <path d="M1,1.5 l1.5,1 1.5,-1"></path>
+            </svg>
+        </div>
+        <ul class="dropdown__options">
+          <li role="option" class="dropdown__option" id="Apples" aria-selected>Apples</li>
+          <li role="option" class="dropdown__option" id="Bananas">Bananas</li>
+          <li role="option" class="dropdown__option" id="Oranges">Oranges</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="dropdown-container">
+      <h3>React</h3>
+      <div id="app"></div>
+    </div>
+  </div>
+  
+  <div id="change-notifier"></div>
+  
+  <script src="https://npmcdn.com/react@15.3.0/dist/react.min.js"></script>
+  <script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
+  <script src="js/app.processed.js"></script>
+
+</body>
+
+</html>
